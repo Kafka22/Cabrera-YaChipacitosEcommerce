@@ -1,22 +1,19 @@
 import './App.css'
-import EjemploProps from './components/EjemploProps'
+import EjemploPropChildren from './components/ejemplos/EjemploPropChildren'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-// app es el papa de todos los componentes
+import FetchContainer from './components/ejemplos/FetchContainer'
+import ItemDetail from './components/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer'
 function App() {
-  const bienvenida = "bienvenidos a mi app"
-  return(
+  return (
     <>
     <NavBar/>
-    <ItemListContainer greeting = "bienvenidos a YaChipacitos!"/>
-    <div>
-    <h1 className='titulo'>Hola🎃</h1>   
-    <h2 style={{color:'purple', fontSize: "18px"}}>{bienvenida}</h2>
-    {/* importo un componente */}
-    <EjemploProps bienvenida = {bienvenida} texto ="hola soy prop" count ={5} />
-    </div>
+    <ItemListContainer greeting= "bienvenidos" />
+    <EjemploPropChildren/>
+    {/* <FetchContainer/> */}
+    <ItemDetailContainer/>
     </>
-    
   )
 }
 

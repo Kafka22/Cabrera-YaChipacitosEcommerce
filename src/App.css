@@ -7,7 +7,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-image: url(./assets/fondo_web_grande.png);
+  background-image: url(../imagenes/fondo_web_chico.png);
+  height: 90px;
+  padding: 0px 0px !important;
 }
 .navbar ul{
     display: flex;
@@ -16,15 +18,20 @@
     list-style: none;
 }
 a {
-  text-decoration: none;
-  color: black;
+  text-decoration: none !important;
+  color: black !important;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
-img{
-  margin-left: 10px;
-  width: 40px;
-  height: 40px;
+img {
+  width: 100%;
+  height: 200px; /* Ajusta la altura que desees */
+  object-fit: cover; /* Mantiene la proporción sin deformar y cubre todo el contenedor */
+}
+.navbar img {
+  margin: 0px;
+  height: 100%; /* La imagen toma la misma altura que el Navbar */
+  width: 150px; /* Mantiene las proporciones */
 }
 
 .cartWidget-container{
@@ -32,3 +39,4 @@ img{
   justify-content: space-around;
   align-items: center;
 }
+

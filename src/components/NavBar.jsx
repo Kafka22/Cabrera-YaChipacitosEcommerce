@@ -2,7 +2,7 @@ import CartWidget from "./CartWidget"
 const NavBar = () =>{
     return (
         <nav className='navbar'>
-            <img src="./src/assets/logo.png"  alt="Logo" />
+            <img src="../imagenes/logo.png"  alt="Logo" />
             <ul>
                 <li><a href="">Sucursales</a></li>
                 <li><a href="">Menu</a></li>
