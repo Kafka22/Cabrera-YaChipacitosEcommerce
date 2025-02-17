@@ -5,15 +5,23 @@ import ItemListContainer from './components/ItemListContainer'
 import FetchContainer from './components/ejemplos/FetchContainer'
 import ItemDetail from './components/ItemDetail'
 import ItemDetailContainer from './components/ItemDetailContainer'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 function App() {
   return (
-    <>
+    <BrowserRouter>
     <NavBar/>
-    <ItemListContainer greeting= "bienvenidos" />
-    <EjemploPropChildren/>
+    <Routes>
+      <Route path="/" element={<ItemListContainer greeting= "bienvenidos" />} ></Route>
+      <Route path="/item/:id" element={<ItemDetailContainer/>}></Route>
+      <Route path="/category/:categoryId" element={<ItemListContainer greeting= "Categoria: " />}></Route>
+
+    </Routes> 
+    
+    {/* <EjemploPropChildren/> */}
     {/* <FetchContainer/> */}
-    <ItemDetailContainer/>
-    </>
+    
+    
+    </BrowserRouter>
   )
 }
 

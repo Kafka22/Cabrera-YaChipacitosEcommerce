@@ -21,7 +21,7 @@ const products = [
         id: "03",
         name: "chipanwich",
         price: 450,
-        category: "mas vendido",
+        category: "sucursales",
         descripcion: "salame y queso",
         stock: 15,
         img: "/imagenes/chipanwich2.jpg"
@@ -47,7 +47,7 @@ export const getProducts = () =>{
             }else{
                 reject("hubo un error, intente mas tarde")
             }
-        }, 5000)
+        }, 2000)
     })
 }
 

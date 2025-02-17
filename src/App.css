@@ -28,6 +28,9 @@ img {
   height: 200px; /* Ajusta la altura que desees */
   object-fit: cover; /* Mantiene la proporción sin deformar y cubre todo el contenedor */
 }
+.logoContainer{
+  height: 100%;
+}
 .navbar img {
   margin: 0px;
   height: 100%; /* La imagen toma la misma altura que el Navbar */
