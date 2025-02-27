@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { getProducts } from '../mock/data';
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import CenteredComponent from './ejemplos/CenteredComponent';
 import { useParams } from 'react-router-dom';
+import { ResizeComponent } from './ejemplos/ResizeComponent';
+import FormComponent from './ejemplos/FormComponent';
+import ActividadEventos from './ejemplos/ActividadEventos';
+// import { ThemeContext } from './ejemplos/ThemeContext';
+import LoaderComponent from './ejemplos/LoaderComponent';
+
 const ItemListContainer = ({ greeting, stock }) => {
 
   const [productsList, setProductsList] = useState ([])
   const [loader, setLoader] = useState (false)
   const {categoryId}= useParams();
-  console.log(categoryId)
+  // const {theme, cambiarTema} = useContext (ThemeContext)
+  // console.log(categoryId)
   //EJEMPLO DE PROMESA
   // const error = true;
   // const ejemploPromise = new Promise((resolve, reject)=>{
@@ -20,6 +27,9 @@ const ItemListContainer = ({ greeting, stock }) => {
   //   }
   // })
   // console.log (ejemploPromise);
+
+  //EJEMPLO DE EVENTOS
+
   useEffect(()=>{
     //prender el loader
 
@@ -45,11 +55,26 @@ const ItemListContainer = ({ greeting, stock }) => {
     <>
     {stock === 0
         ? <p>Lo sentimos no hay stock disponible</p> 
-        : <CenteredComponent>
-        <p>{greeting} {categoryId && <span style={{color:"red"}}>{categoryId} </span> } </p>
+        : 
+        
+        <CenteredComponent>
+        {/* <ResizeComponent></ResizeComponent> */}
+        {/* <ActividadEventos/> */}
+        {/* <FormComponent/> */}
+        
+        {/* <h3>El tema es: {theme ? "dark" : "ligth"} </h3> */}
+        {/* <button onClick={cambiarTema}>cambiar tema</button> */}
         
         {/* {productsList.map((producto)=> <p key={product.id}>{producto.name}</p>)} */}
-        {loader ? <p>Cargando...</p> : <ItemList productsList ={productsList} />}
+        {loader 
+        ? <LoaderComponent/> 
+        :
+        <div>
+          <p>{greeting} {categoryId 
+          && <span style={{color:"red"}}>{categoryId} </span> } </p> 
+          <ItemList productsList ={productsList} />
+        </div>
+        }
         
       </CenteredComponent>
     }

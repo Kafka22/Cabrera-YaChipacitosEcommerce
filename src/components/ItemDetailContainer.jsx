@@ -3,7 +3,7 @@ import { getOneProduct } from '../mock/data';
 import ItemDetail from './ItemDetail';
 import CenteredComponent from './ejemplos/CenteredComponent';
 import { useParams } from 'react-router-dom';
-
+import LoaderComponent from './ejemplos/LoaderComponent';
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null);
     const { id } = useParams(); // Obtenemos solo el id desde useParams
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     return (
         <CenteredComponent>
             {/* Muestra "Loading..." mientras el item sea null */}
-            {item ? <ItemDetail item={item} /> : <p>loading...</p>}
+            {item ? <ItemDetail item={item} /> : <LoaderComponent/>}
         </CenteredComponent>
     );
 };

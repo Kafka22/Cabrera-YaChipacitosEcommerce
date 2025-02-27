@@ -12,7 +12,7 @@ const NavBar = () =>{
                 <li><NavLink path="/category" to="/category/menu/" >Menu</NavLink></li>
                 <li><NavLink path="/category" to="/category/promociones/">Promociones</NavLink></li>
                 <li><NavLink path="/category" to="/category/merch/">Merch</NavLink></li>
-                <li><NavLink path="/category"><CartWidget/></NavLink></li>
+                <li><NavLink to="/cart"><CartWidget/></NavLink></li>
             </ul>
         </nav>
         
