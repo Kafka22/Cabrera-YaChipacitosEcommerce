@@ -1,15 +1,12 @@
 import './App.css'
-import EjemploPropChildren from './components/ejemplos/EjemploPropChildren'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import FetchContainer from './components/ejemplos/FetchContainer'
-import ItemDetail from './components/ItemDetail'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { CartProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
 import Checkout from './components/Checkout'
-// import { ThemeProvider } from './components/ejemplos/ThemeContext'
+import CheckoutUseForm from "./components/ejemplos/CheckoutUseForm"
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +17,8 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer/>}></Route>
             <Route path="/category/:categoryId" element={<ItemListContainer greeting= "Categoria: " />}></Route>
             <Route path="/cart" element={<CartContainer/>}/>
-            <Route path="/checkout" element={<Checkout/>} />
+            {/* <Route path="/checkout" element={<Checkout/>} /> */}
+            <Route path="/checkout" element={<CheckoutUseForm/>} /> 
           </Routes> 
           
           {/* <EjemploPropChildren/> */}
