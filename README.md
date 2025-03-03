@@ -1,8 +1,20 @@
-# React + Vite
+# Yachipacitos-Ecommerce
+Este proyecto fue realizado para aprender las bases de react con javascript en coderhouse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![](/public/Captura%20de%20pantalla%20(53).png)
 
-Currently, two official plugins are available:
+### Instalacion ⚙
+1. Clone el repositorio
+2. Ejecute npm install para instalar las dependencias y crear node_modules
+3. Ejecute npm run dev para levantarlo en el servidor local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Version Host 💻
+Si desea ver el proyecto online puede ingresar al siguiente link [YaChipacitosApp]()
+
+### Librerias utilizadas
+
+- [Bootstrap] : utilizado para el styling de la app
+- [Firebase] : utilizado como base de datos
+- [React Router Dom] : utilizado para la navegacion por rutas
+
+# Desarrollado por Nicolas Cabrera
