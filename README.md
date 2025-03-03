@@ -1,7 +1,7 @@
 # Yachipacitos-Ecommerce
 Este proyecto fue realizado para aprender las bases de react con javascript en coderhouse
 
-![](/public/Captura%20de%20pantalla%20(53).png)
+![](/public/Captura%20de%20pantalla%20(55).png)
 
 ### Instalacion ⚙
 1. Clone el repositorio
