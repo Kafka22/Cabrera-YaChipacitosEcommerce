@@ -9,9 +9,11 @@ import FormComponent from './ejemplos/FormComponent';
 import ActividadEventos from './ejemplos/ActividadEventos';
 // import { ThemeContext } from './ejemplos/ThemeContext';
 import LoaderComponent from './ejemplos/LoaderComponent';
-import { collection, query, where } from 'firebase/firestore';
+import { addDoc, collection, query, where } from 'firebase/firestore';
 import { db } from "../services/firebase"
 import { getDocs } from 'firebase/firestore';
+import { products } from '../mock/data';
+
 const ItemListContainer = ({ greeting, stock }) => {
 
   const [productsList, setProductsList] = useState ([])
@@ -76,9 +78,11 @@ const ItemListContainer = ({ greeting, stock }) => {
   // },[categoryId])
 
   // console.log(productsList, " data");  
+  
 
   return (
     <>
+    
     {stock === 0
         ? <p>Lo sentimos no hay stock disponible</p> 
         : 
