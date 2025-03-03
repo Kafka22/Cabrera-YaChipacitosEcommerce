@@ -9,7 +9,9 @@ import FormComponent from './ejemplos/FormComponent';
 import ActividadEventos from './ejemplos/ActividadEventos';
 // import { ThemeContext } from './ejemplos/ThemeContext';
 import LoaderComponent from './ejemplos/LoaderComponent';
-
+import { collection, query, where } from 'firebase/firestore';
+import { db } from "../services/firebase"
+import { getDocs } from 'firebase/firestore';
 const ItemListContainer = ({ greeting, stock }) => {
 
   const [productsList, setProductsList] = useState ([])
@@ -30,24 +32,48 @@ const ItemListContainer = ({ greeting, stock }) => {
 
   //EJEMPLO DE EVENTOS
 
-  useEffect(()=>{
-    //prender el loader
 
+  //FIREBASE
+  useEffect(() => {
     setLoader(true)
-
-    // console.log(getProducts(), "promesa")
-    getProducts()
-    .then((res)=> {
-      if(categoryId){
-        setProductsList(res.filter((item)=> item.category === categoryId))
-      }else {
-        setProductsList(res)
-      }
+    //conecto con mi coleccion
+    const productsCollection = categoryId 
+    ? query(collection(db, "products"), where("category", "==", categoryId)) 
+    : collection(db, "products")
+    //pedir los documentos
+    getDocs(productsCollection)
+    .then((res)=>{
+      const list = res.docs.map((doc)=>{
+        return {
+          id:doc.id,
+          ...doc.data()
+        }
+      })
+      setProductsList(list)
     })
-    .catch((error)=> console.log(error, "error")) 
-    //apago el loader al final
+    .catch((error)=>console.log(error))
     .finally(()=> setLoader(false))
   },[categoryId])
+
+  //PROMESA LOCAL
+  // useEffect(()=>{
+  //   //prender el loader
+
+  //   setLoader(true)
+
+  //   // console.log(getProducts(), "promesa")
+  //   getProducts()
+  //   .then((res)=> {
+  //     if(categoryId){
+  //       setProductsList(res.filter((item)=> item.category === categoryId))
+  //     }else {
+  //       setProductsList(res)
+  //     }
+  //   })
+  //   .catch((error)=> console.log(error, "error")) 
+  //   //apago el loader al final
+  //   .finally(()=> setLoader(false))
+  // },[categoryId])
 
   // console.log(productsList, " data");  
 

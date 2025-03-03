@@ -3,7 +3,7 @@ import ItemCount from './ItemCount';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({productDetail}) => {
     // const [quantity, setQuantity] = useState(null);
 
     // const onAdd = (cantidad) => {
@@ -16,20 +16,20 @@ const ItemDetail = ({item}) => {
 
     const onAdd = (cantidad) => {
       setPurchase(true)
-      addItem(item, cantidad)
+      addItem(productDetail, cantidad)
       alert(`Agregaste ${cantidad} al carrito`);
     };
     console.log(cart, "carrito")
-    if (!item) {
+    if (!productDetail) {
         return <p>Loading...</p>; // Muestra un mensaje mientras se cargan los datos
       }
   return (
     <div>
-      <h1>Detalle de: {item.name}</h1>
-      <img src={item.img} alt={item.name} />
-      <p>{item.descripcion}</p> 
-      <p>Stock disponible: {item.stock}</p>
-      <p>Precio: ${item.price}</p>
+      <h1>Detalle de: {productDetail.name}</h1>
+      <img src={productDetail.img} alt={productDetail.name} />
+      <p>{productDetail.descripcion}</p> 
+      <p>Stock disponible: {productDetail.stock}</p>
+      <p>Precio: ${productDetail.price}</p>
 
       {/* //como lo pide la actividad */}
       {/* {!quantity 
@@ -37,7 +37,7 @@ const ItemDetail = ({item}) => {
       : <button className='btn btn-dark' >Ir al carrito</button> } */}
       {/* como conviene */}
       {!purchase 
-      ? <ItemCount stock={item.stock} onAdd={onAdd} />
+      ? <ItemCount stock={productDetail.stock} onAdd={onAdd} />
       : <Link to="/cart" className='btn btn-dark' >Ir al carrito</Link> }
     </div>
   )

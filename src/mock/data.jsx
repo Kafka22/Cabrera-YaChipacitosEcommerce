@@ -3,7 +3,7 @@ const products = [
         id: "01",
         name: "chipa clasica",
         price: 450,
-        category: "mas vendido",
+        category: "sucursales",
         descripcion: "tamaño medio - 35grs",
         stock: 10,
         img: "/imagenes/clasicas.jpg"
